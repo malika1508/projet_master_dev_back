@@ -1,15 +1,11 @@
-
-import utils
 from fastapi.security.oauth2 import OAuth2PasswordBearer
 from fastapi.param_functions import Depends
 from fastapi import status
 from fastapi.exceptions import HTTPException
 from jose import JWTError, jwt
-from typing import Union
 from datetime import datetime, timedelta
-from utils import *
-from jose import JWTError, jwt
-from config import settings
+from app.utils import *
+from app.config import settings
 
 
 oauth2_scheme  = OAuth2PasswordBearer(tokenUrl= 'login')

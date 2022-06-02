@@ -1,6 +1,3 @@
-# import sys
-# sys.path.append('../')
-
 from fastapi import status
 from fastapi.routing import APIRouter
 from fastapi.exceptions import HTTPException
@@ -8,11 +5,11 @@ from fastapi.param_functions import Depends
 from sqlalchemy.orm import Session
 from datetime import datetime
 from typing import List, Union
-from utils import encrypt
-from database import get_db
-from schemas import Animateur, Animateur_Res
-from jwt_stuff import get_current_user_id
-import models as models
+from app.utils import encrypt
+from app.database import get_db
+from app.schemas import Animateur, Animateur_Res
+from app.jwt_stuff import get_current_user_id
+import app.models as models
 
 router = APIRouter()
 
@@ -45,7 +42,6 @@ async def check_a_visit(
                             detail=f"no such visit")
     else:
         visit.checked = True
-        # query.update(visit.__dict__)
         db.commit()
 
     return

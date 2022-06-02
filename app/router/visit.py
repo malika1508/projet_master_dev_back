@@ -1,14 +1,12 @@
-import sys
-sys.path.append('../')
-
-from fastapi import APIRouter, Depends
-from datetime import date, datetime
+from fastapi.routing import APIRouter
+from fastapi.param_functions import Depends
+from datetime import datetime
 from typing import List
 from sqlalchemy.orm import Session
-from database import get_db
-import models as models
-from schemas import Visit
-from jwt_stuff import get_current_user_id
+from app.database import get_db
+import app.models as models
+from app.schemas import Visit
+from app.jwt_stuff import get_current_user_id
 
 router = APIRouter()
 

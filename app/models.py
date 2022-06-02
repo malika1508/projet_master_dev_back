@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey, Boolean
-from database import Base
+from app.database import Base
 
 # used for db (creating tables)
 class Pos(Base):

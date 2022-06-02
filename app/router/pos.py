@@ -1,11 +1,13 @@
 # import sys
 # sys.path.append('../')
 
-from fastapi import APIRouter, status, Depends
+from fastapi import status
+from fastapi.routing import APIRouter
+from fastapi.param_functions import Depends
 from sqlalchemy.orm import Session
-from database import get_db
-import models as models
-from schemas import Pos, Pos_Res
+from app.database import get_db
+import app.models as models
+from app.schemas import Pos, Pos_Res
 from typing import List
 
 

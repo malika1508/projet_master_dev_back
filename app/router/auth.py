@@ -2,14 +2,16 @@
 # import sys
 # sys.path.append('../')
 
-from fastapi import APIRouter,  status, HTTPException, Depends
-from fastapi.security.oauth2 import  OAuth2PasswordRequestForm
+from fastapi.routing import APIRouter
+from fastapi import status
+from fastapi.exceptions import HTTPException
+from fastapi.param_functions import Depends
 from sqlalchemy.orm import Session
-import utils as utils
-from schemas import Animateur_login, Token
-from database import get_db
-import models as models
-from jwt_stuff import create_access_token
+import app.utils as utils
+from app.schemas import Animateur_login
+from app.database import get_db
+import app.models as models
+from app.jwt_stuff import create_access_token
 from typing import Union
 
 router = APIRouter()

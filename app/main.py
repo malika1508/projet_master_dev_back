@@ -1,10 +1,9 @@
-import sys
-sys.path.append('../')
-from fastapi import FastAPI
+
+from fastapi.applications import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from router import pos, animateur, auth, visit
-from database import Base, engine
-import models
+from app.router import pos, animateur, auth, visit
+from app.database import engine
+import app.models as models
 
 
 app = FastAPI()
