@@ -1,0 +1,72 @@
+@hostname = http://127.0.0.1:8000/
+@token = token
+
+
+###
+POST {{hostname}}login
+Content-Type: application/json
+
+{
+    "phone_num": "333333333",
+    "password" : "mouhamed_pass"
+}
+
+###
+
+### plans====================
+GET  {{hostname}}plan/
+Authorization : Bearer {{token}}
+###
+
+GET  {{hostname}}plan/today
+Authorization : Bearer {{token}}
+
+###
+
+GET  {{hostname}}plan/all
+
+###
+
+### animateur ===================
+GET {{hostname}}animateur/list
+
+###
+
+GET {{hostname}}animateur/
+Authorization : Bearer {{token}}
+###
+
+POST {{hostname}}animateur
+Content-Type: application/json
+
+{
+    "phone_num" : "444444444",
+    "full_name" : "salah",
+    "password" : "salah_pass",
+    "zone" : 0
+}
+
+
+###
+
+PUT {{hostname}}animateur/1
+Authorization: bearer {{token}}
+### pdvs ========================
+GET {{hostname}}pos
+###
+
+POST {{hostname}}pos/
+Content-Type: application/json
+
+{
+    "phone_num" : "123345",
+    "x" : 1,
+    "y" : 1,
+    "zone" : 0,
+    "priority" : 1
+}
+
+###
+
+###
+GET {{hostname}}pos/2
