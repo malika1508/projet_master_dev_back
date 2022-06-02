@@ -4,7 +4,7 @@ from app.database import Base
 # used for db (creating tables)
 class Pos(Base):
     __tablename__ = "pos"
-    __table_args__ = {'extend_existing': True}
+    # __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, primary_key = True)
     phone_num = Column(String)
@@ -15,7 +15,7 @@ class Pos(Base):
 
 class Animateur(Base):
     __tablename__ = "animateur"
-    __table_args__ = {'extend_existing': True}
+    # __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, primary_key = True)
     phone_num = Column(String, nullable = False)
@@ -25,7 +25,7 @@ class Animateur(Base):
 
 class Visit(Base):
     __tablename__ = 'visit'
-    __table_args__ = {'extend_existing': True}
+    # __table_args__ = {'extend_existing': True}
 
     id_pos  = Column(Integer,  ForeignKey('pos.id'), primary_key = True)
     id_anim  = Column(Integer, ForeignKey('animateur.id'), primary_key = True)
