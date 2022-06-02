@@ -11,7 +11,6 @@ class SettingsConfig(BaseSettings):
     ALGORITHM : str
     ACCESS_TOKEN_EXPIRE_TIME  : int
 
-
     class Config:
         env_file = ".env"
 
