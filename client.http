@@ -1,5 +1,6 @@
-@hostname = http://127.0.0.1:8000/
-@token = token
+# @hostname = http://127.0.0.1:8000/
+@hostname = https://projet-master-dev-back.herokuapp.com/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGhvbmVfbnVtIjoiMzMzMzMiLCJleHAiOjE2NTY0MTA5MzJ9.OKEyOb-yhBCbJwpBPBjvETtq6vmOD1h2J2KmSdR7lPk
 
 
 ###
@@ -7,8 +8,8 @@ POST {{hostname}}login
 Content-Type: application/json
 
 {
-    "phone_num": "333333333",
-    "password" : "mouhamed_pass"
+    "phone_num": "33333",
+    "password" : "rania_pass"
 }
 
 ###

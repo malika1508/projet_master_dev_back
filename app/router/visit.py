@@ -17,7 +17,6 @@ def get_list_visits( id: int = Depends(get_current_user_id),db: Session = Depend
         filter( models.Pos.id == models.Visit.id_pos).\
         filter(models.Visit.id_anim == id).\
         all()
-
     return visits
 
 

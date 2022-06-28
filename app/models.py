@@ -22,6 +22,17 @@ class Animateur(Base):
     full_name = Column(String)
     password = Column(String, nullable = False)
     zone = Column(Integer, nullable = False)
+    last_day = Column(Integer)
+    max_days = Column(Integer)
+
+# class Visit(Base):
+#     __tablename__ = 'visit'
+#     # __table_args__ = {'extend_existing': True}
+
+#     id_pos  = Column(Integer,  ForeignKey('pos.id'), primary_key = True)
+#     id_anim  = Column(Integer, ForeignKey('animateur.id'), primary_key = True)
+#     date_visit = Column(Date, primary_key = True, nullable = False)
+#     checked = Column(Boolean, server_default='FALSE')
 
 class Visit(Base):
     __tablename__ = 'visit'
@@ -29,5 +40,12 @@ class Visit(Base):
 
     id_pos  = Column(Integer,  ForeignKey('pos.id'), primary_key = True)
     id_anim  = Column(Integer, ForeignKey('animateur.id'), primary_key = True)
-    date_visit = Column(Date, primary_key = True, nullable = False)
+    day = Column(Integer, primary_key = True, nullable = False)
+    date_visit = Column(Date, nullable = False)
+    # checked = Column(Boolean, server_default='FALSE')
+
+class Test(Base):
+    __tablename__ = 'test'
+
+    id  = Column(Integer,   primary_key = True)
     checked = Column(Boolean, server_default='FALSE')

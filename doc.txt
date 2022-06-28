@@ -1,8 +1,0 @@
-sqlalchemy =====> ORM object relational mapper
-fastApi =====> to create an api
-Pydantic =====> define a schema
-Alembic =======> for dbs migrations 
-models are used for the db
-schema are used for routers
-
-.env file is used only for developpemnt env 
