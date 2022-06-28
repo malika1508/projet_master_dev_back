@@ -53,11 +53,14 @@ async def check_a_visit(
             tags= ['animateur']
 )
 async def add_animateur(payload : Animateur, db:Session = Depends(get_db) ):
+    
     db_user = models.Animateur(
         full_name = payload.full_name,
         password =  encrypt(payload.password),
         phone_num = payload.phone_num,
-        zone = payload.zone
+        zone = payload.zone, 
+        last_day = payload.last_day,
+        max_days = payload.max_days
     )
     db.add(db_user)
     db.commit()

@@ -22,8 +22,8 @@ class Animateur(Base):
     full_name = Column(String)
     password = Column(String, nullable = False)
     zone = Column(Integer, nullable = False)
-    last_day = Column(Integer)
-    max_days = Column(Integer)
+    last_day = Column(Integer, nullable = False)
+    max_days = Column(Integer, nullable = False)
 
 # class Visit(Base):
 #     __tablename__ = 'visit'
@@ -43,9 +43,3 @@ class Visit(Base):
     day = Column(Integer, primary_key = True, nullable = False)
     date_visit = Column(Date, nullable = False)
     # checked = Column(Boolean, server_default='FALSE')
-
-class Test(Base):
-    __tablename__ = 'test'
-
-    id  = Column(Integer,   primary_key = True)
-    checked = Column(Boolean, server_default='FALSE')

@@ -27,6 +27,8 @@ class Animateur(BaseModel):
     full_name : str
     password : str
     zone : int
+    last_day : int
+    max_days : int
     class Config:
         orm_mode = True
 
@@ -36,6 +38,8 @@ class Animateur_Res(BaseModel):
     full_name : str
     password : str
     zone : int
+    last_day : int
+    max_days : int
     class Config:
         orm_mode = True
 
@@ -48,8 +52,7 @@ class Animateur_login(BaseModel):
 class Visit(BaseModel):
     id_pos : int
     id_anim : int
-    date_visit : date
-    checked : bool
+    day : int
     class Config:
         orm_mode = True
 

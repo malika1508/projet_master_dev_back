@@ -1,6 +1,6 @@
-# @hostname = http://127.0.0.1:8000/
-@hostname = https://projet-master-dev-back.herokuapp.com/
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGhvbmVfbnVtIjoiMzMzMzMiLCJleHAiOjE2NTY0MTA5MzJ9.OKEyOb-yhBCbJwpBPBjvETtq6vmOD1h2J2KmSdR7lPk
+@hostname = http://127.0.0.1:8000/
+# @hostname = https://projet-master-dev-back.herokuapp.com/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGhvbmVfbnVtIjoiMTIzNCIsImV4cCI6MTY1NjQxMjQwNX0.hVowfb9kypxRRSO4NEA7Gk0W3wWeZahQnKth7Quc02o
 
 
 ###
@@ -8,11 +8,15 @@ POST {{hostname}}login
 Content-Type: application/json
 
 {
-    "phone_num": "33333",
-    "password" : "rania_pass"
+    "phone_num": "1234",
+    "password" : "malika_pass"
 }
 
 ###
+
+
+
+
 
 ### plans====================
 GET  {{hostname}}plan/
@@ -41,28 +45,35 @@ POST {{hostname}}animateur
 Content-Type: application/json
 
 {
-    "phone_num" : "444444444",
-    "full_name" : "salah",
-    "password" : "salah_pass",
-    "zone" : 0
+    "phone_num" : "1234",
+    "full_name" : "malika",
+    "password" : "malika_pass",
+    "zone" : 0,
+    "last_day" : 1,
+    "max_days" : 5
 }
 
 
 ###
 
-PUT {{hostname}}animateur/1
+PUT {{hostname}}animateur/2
 Authorization: bearer {{token}}
+
+
+
+
 ### pdvs ========================
 GET {{hostname}}pos
 ###
+
 
 POST {{hostname}}pos/
 Content-Type: application/json
 
 {
-    "phone_num" : "123345",
-    "x" : 1,
-    "y" : 1,
+    "phone_num" : "123340",
+    "x" : 5,
+    "y" : 5,
     "zone" : 0,
     "priority" : 1
 }

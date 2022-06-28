@@ -17,25 +17,35 @@ def get_list_visits( id: int = Depends(get_current_user_id),db: Session = Depend
         filter( models.Pos.id == models.Visit.id_pos).\
         filter(models.Visit.id_anim == id).\
         all()
-    return visits
+    res = []
+    for visit in visits:
+        record = {}
+        record['day'] = visit[0].day
+        record['phone_num'] = visit[1].phone_num
+        record['x'] = visit[1].x
+        record['y'] = visit[1].y
+        res.append(record)
+        
+    return res
 
 
 
 # get plan de visit d'aujourd'hui
 @router.get("/plan/today", tags=['visit'])
 def get_list_visits_today(db: Session = Depends(get_db), id: int = Depends(get_current_user_id), tags = ['visit']):
+    anim : models.Animateur= db.query(models.Animateur).filter(models.Animateur.id == id).first()
+
+    day = anim.last_day 
     visits =  db.query(models.Visit, models.Pos).\
         filter(models.Visit.id_anim == id).\
-        filter(models.Visit.date_visit == datetime.utcnow().date()).\
+        filter(models.Visit.day == day).\
         filter( models.Pos.id == models.Visit.id_pos).\
         all()
 
     results = []
     for visit in visits:
         v = visit[1].__dict__
-        v['id_pos'] = visit[0].id_pos
-        v['date_visit'] = visit[0].date_visit
-        v['checked'] = visit[0].checked
+        v['day'] = visit[0].day
         results.append(v)
     return results
 
